@@ -1,0 +1,9 @@
+{
+  "name": "proponents",
+  "version": "1.0.0",
+  "description": "Beautifully designed components",
+  "main": "index.js",
+  "repository": "https://github.com/narulakeshav/proponents.git",
+  "author": "narulakeshav <narulakeshav13@gmail.com>",
+  "license": "MIT"
+}

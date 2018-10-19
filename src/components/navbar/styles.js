@@ -1,4 +1,7 @@
 /**
+ * @name: styles.js
+ * @desc: styles for the navbar
+ *
  * External Dependencies
  */
 import styled from 'styled-components';
@@ -9,6 +12,11 @@ import { Link } from 'react-router-dom';
  */
 import { COLORS, SCHEME, FONT } from '../../helpers/variables';
 
+/**
+ * Navbar
+ * Define styles for the navbar (container)
+ * @type nav
+ */
 export const Navbar = styled.nav`
   position: fixed !important;
   z-index: 10000;
@@ -21,11 +29,21 @@ export const Navbar = styled.nav`
   padding: 1rem 5%;
 `;
 
+/**
+ * NavbarBrand
+ * Define styles for the navbar brand
+ * @type div
+ */
 export const NavbarBrand = styled.div`
   display: inline-block;
   margin-right: 1.5rem;
 `;
 
+/**
+ * Wordmark
+ * Styles the wordmark ("proponents") in navbar
+ * @type h4
+ */
 export const Wordmark = styled.h4`
   font: 700 22px 'Carter One';
   color: ${COLORS.dark};
@@ -47,6 +65,11 @@ export const Wordmark = styled.h4`
   }
 `;
 
+/**
+ * NavbarMenu
+ * Define styles for the navbar menu
+ * @type div
+ */
 export const NavbarMenu = styled.div`
   position: relative;
   top: -2px;
@@ -55,10 +78,20 @@ export const NavbarMenu = styled.div`
   padding: 0 1rem;
 `;
 
+/**
+ * NavbarStart
+ * Define styles for the navbar start
+ * @type div
+ */
 export const NavbarStart = styled.div`
   align-items: start;
 `;
 
+/**
+ * NavbarItem
+ * Define styles for the navbar link items
+ * @type Link
+ */
 export const NavbarItem = styled(Link)`
   font: 400 ${FONT.size} ${FONT.family};
   color: ${COLORS.base};

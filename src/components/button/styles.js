@@ -1,4 +1,7 @@
 /**
+ * @name: styles.js
+ * @desc: styled-component styles for
+ *
  * External Dependencies
  */
 import styled from 'styled-components';
@@ -51,12 +54,26 @@ export const Button = styled.button`
   box-shadow: ${(props) => (props.shadow)
     ? '0 2px 4px rgba(0,0,0,0.1)'
     : 'none'
-};
+  };
   border-radius: ${(props) => (props.rounded) ? '40px' : '4px'};
-  margin-right: ${(props) => (props.marginRight) ? '8px' : '0'};
-  margin-left: ${(props) => (props.marginLeft) ? '8px' : '0'};
-  margin-top: ${(props) => (props.marginTop) ? '8px' : '0'};
-  margin-bottom: ${(props) => (props.marginBottom) ? '8px' : '0'};
+
+  margin-right: ${(props) => (!props.noMargin && props.marginRight)
+    ? '8px'
+    : '0'
+  };
+  margin-left: ${(props) => (!props.noMargin && props.marginLeft)
+    ? '8px'
+    : '0'
+  };
+  margin-top: ${(props) => (!props.noMargin && props.marginTop)
+    ? '8px'
+    : '0'
+  };
+  margin-bottom: ${(props) => (!props.noMargin && props.marginBottom)
+    ? '8px'
+    : '0'
+  };
+
   padding: ${(props) => (props.aspectLocked || props.noPadding)
     ? '0'
     : (props.sizeLarge)
@@ -64,7 +81,8 @@ export const Button = styled.button`
       : (props.sizeSmall)
         ? '10px 0.75rem'
         : '10px 1.25rem'
-};
+  };
+
   width: ${(props) => (props.sizeSmall && props.aspectLocked)
     ? '35px'
     : (props.aspectLocked)
@@ -72,7 +90,8 @@ export const Button = styled.button`
       : (props.fullWidth)
         ? '100%'
         : 'auto'
-};
+  };
+
   height: ${(props) => (props.sizeSmall)
     ? '35px'
     : (props.sizeLarge)
@@ -80,7 +99,8 @@ export const Button = styled.button`
       : (props.noPadding)
         ? 'auto'
         : '45px'
-};
+  };
+
   font: ${(props) => (props.weightHeavy || props.uppercase || props.sizeLarge)
     ? '800'
     : (props.weightSemiBold)
@@ -90,14 +110,15 @@ export const Button = styled.button`
         : (props.weightLight)
           ? '300'
           : '700'
-} ${(props) => (props.fontSize)
-  ? `${props.fontSize}px`
-  : (props.sizeLarge)
-    ? `${FONT.size - 3}px`
-    : (props.sizeSmall)
-      ? `${FONT.size - 5}px`
-      : `${FONT.size - 4}px`
-} ${FONT.family};
+  } ${(props) => (props.fontSize)
+    ? `${props.fontSize}px`
+    : (props.sizeLarge)
+      ? `${FONT.size - 3}px`
+      : (props.sizeSmall)
+        ? `${FONT.size - 5}px`
+        : `${FONT.size - 4}px`
+  } ${FONT.family};
+
   color: ${(props) => ((props.textPrimary)
     ? SCHEME.primary
     : (props.textSecondary)
@@ -114,57 +135,60 @@ export const Button = styled.button`
                 ? COLORS.light
                 : SCHEME.gray
   )};
+
   cursor: pointer;
   transition: 0.25s all ease-in-out;
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
   line-height: 1px;
 
   i {
-  position: relative;
-  top: ${(props) => (props.iconTop)
-    ? `${props.iconTop}px`
-    : '0'
-};
+    position: relative;
+
+    top: ${(props) => (props.iconTop)
+      ? `${props.iconTop}px`
+      : '0'
+    };
+
     font-weight: ${(props) => (props.sizeLarge) ? '900' : '400'};
     font-size: ${(props) => (props.iconSize) ? `${props.iconSize}px` : '16px'};
     margin-right: ${(props) => (props.iconLeft) ? '8px' : '0'};
-  margin-left: ${(props) => (props.iconRight) ? '8px' : '0'};
-  transition: 0.15s all ease-in;
+    margin-left: ${(props) => (props.iconRight) ? '8px' : '0'};
+    transition: 0.15s all ease-in;
   }
 
   &:hover {
-  opacity: 0.9;
+    opacity: 0.9;
 
-  i {
-    transform: ${(props) => (props.iconRight)
-    ? 'translateX(2px)'
-    : 'none'
-};
-  }
+    i {
+      transform: ${(props) => (props.iconRight)
+        ? 'translateX(2px)'
+        : 'none'
+      };
+    }
   }
 
   @media screen and (max-width: 925px) {
-  width: ${(props) => (!props.aspectLocked)
-    ? '100%'
-    : 'default'
-};
-  width: ${(props) => (props.sizeSmall && props.aspectLocked)
-    ? '45px'
-    : (props.aspectLocked)
-      ? '50px'
-      : '100%'
-};
-  height: ${(props) => (props.sizeSmall)
-    ? '45px'
-    : (props.sizeLarge)
-      ? '60px'
-      : (props.noPadding)
-        ? 'auto'
-        : '50px'
-};
-  margin: ${(props) => (!props.aspectLocked)
-    ? '0.25rem 0'
-    : 'default'
-};
+    width: ${(props) => (!props.aspectLocked)
+      ? '100%'
+      : 'default'
+    };
+    width: ${(props) => (props.sizeSmall && props.aspectLocked)
+      ? '45px'
+      : (props.aspectLocked)
+        ? '50px'
+        : '100%'
+    };
+    height: ${(props) => (props.sizeSmall)
+      ? '45px'
+      : (props.sizeLarge)
+        ? '60px'
+        : (props.noPadding)
+          ? 'auto'
+          : '50px'
+    };
+    margin: ${(props) => (!props.aspectLocked)
+      ? '0.25rem 0'
+      : 'default'
+    };
   }
 `;

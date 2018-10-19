@@ -1,5 +1,5 @@
 /**
- * @name: Button
+ * @name: button.jsx
  * @desc: Renders button and links on the site.
  *
  * @flow
@@ -50,6 +50,7 @@ const ButtonComponent = (props: Props) => (
   </Button>
 );
 
+// Default Props
 ButtonComponent.defaultProps = {
   children: '',
   bgTransparent: true,

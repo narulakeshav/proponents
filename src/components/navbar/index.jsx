@@ -1,5 +1,9 @@
 /**
+ * @name: navbar.jsx
+ * @desc: renders navbar
+ *
  * @flow
+ * External Dependencies
  */
 import * as React from 'react';
 import { Link } from 'react-router-dom';

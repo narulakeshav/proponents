@@ -1,5 +1,7 @@
 # Proponents
-Proponents is going to be a library with a collection of beautifully designed, user-experience centric components, built with `ReactJS` and `styled-components`.
+Proponents is a library with a collection of beautifully designed, user-experience centric components, built with `ReactJS` and `styled-components`.
+
+![Screenshot](https://i.imgur.com/hYqBJIO.jpg)
 
 ## Installing
 ```sh

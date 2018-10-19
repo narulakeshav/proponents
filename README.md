@@ -1,5 +1,23 @@
 # Proponents
 Proponents is going to be a library with a collection of beautifully designed, user-experience centric components, built with `ReactJS` and `styled-components`.
 
-## Proponent List
-* Form Element with Inputs & Errors
+## Installing
+```sh
+  git clone https://github.com/narulakeshav/proponents.git
+  cd proponents
+
+  # install dependencies
+  yarn
+
+  # run dev server
+  yarn dev
+```
+
+## Proponents List
+* **`Input`**: An input element designed with preciseness and contains error handling styles.
+* **`Matrix3D`**: A tab switcher with animations when you switch content. *Inspired from Stripe*.
+
+## Proponents to be added
+* Form
+* Navbar
+* Footer

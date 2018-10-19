@@ -1,6 +1,5 @@
-/* @flow */
-
 /**
+ * @flow
  * External Dependencies
  */
 import * as React from 'react';
@@ -15,9 +14,8 @@ type Props = {
 };
 
 /**
- * ScrollToTop Component
- *
- * Scrolls the page to top on route change
+ * ScrollToTop HOC
+ * Scrolls the page to top when a route change
  */
 class ScrollToTop extends React.Component<Props> {
   componentDidUpdate = (prevProps: Object) => {

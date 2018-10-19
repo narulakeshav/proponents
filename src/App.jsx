@@ -1,6 +1,5 @@
 /**
  * @flow
- *
  * External Dependencies
  */
 import * as React from 'react';
@@ -30,7 +29,7 @@ type Props = {};
 
 /**
  * App Component
- * Manages all the Routes.
+ * Defines and manages all the Routes.
  */
 class App extends React.Component<Props> {
   render() {

@@ -1,6 +1,5 @@
 /**
  * @flow
- *
  * External Dependencies
  */
 import React from 'react';

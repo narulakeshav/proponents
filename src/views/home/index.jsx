@@ -1,6 +1,9 @@
 /**
- * @flow
+ * @name: home.jsx
+ * @desc: rendes home page with links to all
+ * proponents.
  *
+ * @flow
  * External Dependencies
  */
 import * as React from 'react';
@@ -9,6 +12,9 @@ import { Link } from 'react-router-dom';
 /**
  * Internal Dependencies
  */
+import PROPONENTS from '../../helpers/proponentList';
+import { CardsContainer, ComponentCard } from './styles';
+// Get global styles
 import {
   Page,
   Section,
@@ -18,16 +24,6 @@ import {
   Img,
   Code
 } from '../../helpers/global';
-import { CardsContainer, ComponentCard } from './styles';
-
-/**
- * Local Variables
- */
-const COMPONENTS = [
-  { name: 'Input', to: '/p/input' },
-  { name: 'Form', to: '/p/form' },
-  { name: 'matrix3D', to: '/p/matrix3d' }
-];
 
 /**
  * Renders each component card
@@ -66,9 +62,9 @@ const renderHeroSection = (): React.Element<typeof Section> => (
  */
 const renderComponentList = (): React.Element<typeof Section> => (
   <Section padding="8rem 20%">
-    <H5 textLighter weightHeavy>Components ({COMPONENTS.length})</H5>
+    <H5 textLighter weightHeavy>Components ({PROPONENTS.length})</H5>
     <CardsContainer padding="4rem 0" split="1fr 1fr 1fr" gap="2rem">
-      {COMPONENTS.map((c) => renderComponentCard(c))}
+      {PROPONENTS.map((c) => renderComponentCard(c))}
     </CardsContainer>
   </Section>
 );

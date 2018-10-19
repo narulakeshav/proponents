@@ -1,6 +1,9 @@
 /**
- * @flow
+ * @name: input.jsx
+ * @desc: renders the input page which contains the
+ * input element.
  *
+ * @flow
  * External Dependencies
  */
 import * as React from 'react';
@@ -9,13 +12,14 @@ import * as React from 'react';
  * Internal Dependencies
  */
 import Button from '../../components/button';
-import { Page, Section, H4, Text } from '../../helpers/global';
-import { InputContainer, Icon, Input, Label } from './styles';
+import Input from '../../components/input';
+
+// Get global styles
+import { Page, Section, H4 } from '../../helpers/global';
 
 /**
  * Local Variables
  */
-type Props = {};
 type State = {
   input: string,
   bordered: boolean,
@@ -23,16 +27,20 @@ type State = {
 };
 
 /**
- * Input Component
+ * InputPage Component
  */
-class InputComponent extends React.Component<Props, State> {
+class InputPage extends React.Component<null, State> {
   state = {
     input: '',
     bordered: false,
     errorMessage: '',
   };
 
-  onInputChange = (e: SyntheticKeyboardEvent<HTMLInputElement>) => {
+  /**
+   * Set the input value on change. Also, set the bordered
+   * state to false when the user types.
+   */
+  onInputChange = (e: SyntheticKeyboardEvent<HTMLInputElement>): void => {
     this.setState({
       input: e.currentTarget.value
     }, () => {
@@ -44,10 +52,14 @@ class InputComponent extends React.Component<Props, State> {
     });
   }
 
-  onButtonSubmit = () => {
-    const { input } = this.state;
-
-    if (input.trim() === '') {
+  /**
+   * If input value is empty, show error.
+   * Else, proceed to show success alert
+   *
+   * @TODO: Show success alert
+   */
+  onButtonSubmit = (): void => {
+    if (this.state.input.trim() === '') {
       this.setState({
         bordered: true,
         errorMessage: 'Please add your first name.'
@@ -56,11 +68,10 @@ class InputComponent extends React.Component<Props, State> {
           this.input.focus();
         }
       });
-    } else {
-      alert('Got it.');
     }
   }
 
+  // Input Ref
   input: ?HTMLInputElement;
 
   // Render
@@ -69,36 +80,36 @@ class InputComponent extends React.Component<Props, State> {
       <Page bgGray>
         <Section padding="8rem 20%">
           <H4 textLighter logoFont>Input Proponent</H4>
-          <Label>First Name</Label>
-          <InputContainer split="1fr 15fr" bordered={this.state.bordered}>
-            <Icon className="material-icons" error={this.state.bordered}>
-              account_box
-            </Icon>
-            <Input
-              placeholder="First Name"
-              value={this.state.input}
-              onChange={this.onInputChange}
-              innerRef={(field) => this.input = field}
-            />
-          </InputContainer>
+          <Input
+            width={400}
+            inline
+            margin="0 1rem 0.5rem 0"
+            hasLabel
+            label="First Name"
+            hasIcon
+            iconName="account_circle"
+            split="1fr 15fr"
+            placeholder="First Name"
+            inputValue={this.state.input}
+            inputChange={this.onInputChange}
+            inputRef={(field) => this.input = field}
+            hasError={this.state.bordered}
+            errorMessage={this.state.errorMessage}
+          />
           <Button
-            marginLeft
             bgDark
             textWhite
             weightBold
+            noMargin
             onClick={this.onButtonSubmit}
           >
             Submit Form
           </Button>
-          {(this.state.bordered)
-            ? <Text fontSize={16} textError>{this.state.errorMessage}</Text>
-            : ''
-          }
         </Section>
       </Page>
     );
   }
 }
 
-// Export Input
-export default InputComponent;
+// Export Input Page
+export default InputPage;

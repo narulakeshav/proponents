@@ -1,6 +1,9 @@
 /**
- * @flow
+ * @name: matrix3d.jsx
+ * @desc: renders component which uses css transition property
+ * matrix3d. This was inspired from Stripe.
  *
+ * @flow
  * External Dependencies
  */
 import * as React from 'react';
@@ -8,19 +11,20 @@ import * as React from 'react';
 /**
  * Internal Dependencies
  */
+// Page styles
 import {
-  Page,
-  Section,
-  H4,
-  Text,
-  Code,
-} from '../../helpers/global';
-import { TabGroup, TabSelector, ContentWell, SectionContent } from './styles';
+  TabGroup,
+  TabSelector,
+  ContentWell,
+  SectionContent
+} from './styles';
+
+// Global styles
+import { Page, Section, H4, Text } from '../../helpers/global';
 
 /**
  * Local Variables
  */
-type Props = {};
 type State = {
   selectedTab: number
 };
@@ -28,16 +32,60 @@ type State = {
 /**
  * Matrix3D Component
  */
-class Matrix3D extends React.Component<Props, State> {
+class Matrix3D extends React.Component<null, State> {
   state = {
     selectedTab: 1,
   };
 
-  onSeletTab = (e: SyntheticEvent<HTMLButtonElement>) => {
-    const tab = parseInt(e.currentTarget.getAttribute('data-tab'));
+  /**
+   * Makes the clicked tab active (selected)
+   */
+  onSelectTab = (e: SyntheticEvent<HTMLButtonElement>): void => {
+    const tab = e.currentTarget.getAttribute('data-tab');
     this.setState({
-      selectedTab: tab
+      selectedTab: parseInt(tab)
     });
+  }
+
+  /**
+   * Renders a tab item
+   * @param {position} tab: position in the list. The left-most
+   * tab has the position 1.
+   * @param {string} label
+   */
+  renderTab = (position: number, label: string): React.Element<typeof TabSelector> => (
+    <TabSelector
+      bgTransparent
+      sizeSmall
+      textLight
+      marginRight
+      noPadding
+      weightNormal
+      fontSize={15}
+      className={(this.state.selectedTab === position) ? 'active' : ''}
+      data-tab={position}
+      onClick={this.onSelectTab}
+    >
+      {label}
+    </TabSelector>
+  );
+
+  /**
+   * Renders the content for the tab
+   * @param {number} position
+   * @param {string} text
+   */
+  renderTabContent = (position: number, text: string): React.Element<SectionContent> => {
+    const { selectedTab } = this.state;
+    return (
+      <SectionContent
+        data-key={position.toString()}
+        className={`${(selectedTab === position) ? 'well selected' : 'well absolute'}`}
+        display={selectedTab === position}
+      >
+        <Text fontSize={20}>{text}</Text>
+      </SectionContent>
+    );
   }
 
   /**
@@ -47,100 +95,16 @@ class Matrix3D extends React.Component<Props, State> {
     <Section padding="8rem 20%">
       <H4 textLighter logoFont>Matrix3D animations</H4>
       <TabGroup>
-        <TabSelector
-          bgTransparent
-          sizeSmall
-          textLight
-          marginRight
-          noPadding
-          weightNormal
-          fontSize={15}
-          className={(this.state.selectedTab === 1) ? 'active' : ''}
-          data-tab={1}
-          onClick={this.onSeletTab}
-        >
-          LeBron James
-        </TabSelector>
-        <TabSelector
-          bgTransparent
-          sizeSmall
-          textLight
-          marginRight
-          noPadding
-          weightNormal
-          fontSize={15}
-          className={(this.state.selectedTab === 2) ? 'active' : ''}
-          data-tab={2}
-          onClick={this.onSeletTab}
-        >
-          Brandon Ingram
-        </TabSelector>
-        <TabSelector
-          bgTransparent
-          sizeSmall
-          textLight
-          marginRight
-          noPadding
-          weightNormal
-          fontSize={15}
-          className={(this.state.selectedTab === 3) ? 'active' : ''}
-          data-tab={3}
-          onClick={this.onSeletTab}
-        >
-          Lonzo Ball
-        </TabSelector>
-        <TabSelector
-          bgTransparent
-          sizeSmall
-          textLight
-          marginRight
-          noPadding
-          weightNormal
-          fontSize={15}
-          className={(this.state.selectedTab === 4) ? 'active' : ''}
-          data-tab={4}
-          onClick={this.onSeletTab}
-        >
-          Kyle Kuzma
-        </TabSelector>
+        {this.renderTab(1, 'LeBron James')}
+        {this.renderTab(2, 'Kobe Bryant')}
+        {this.renderTab(3, 'Michael Jordan')}
+        {this.renderTab(4, 'Magic Johnson')}
       </TabGroup>
       <ContentWell>
-        <SectionContent
-          data-key="1"
-          className={`${(this.state.selectedTab === 1) ? 'well selected' : 'well absolute'}`}
-          display={this.state.selectedTab === 1}
-        >
-          <Text fontSize={20}>
-            This is a matrix3D animation done using <Code>1()</Code> animation property.
-          </Text>
-        </SectionContent>
-        <SectionContent
-          data-key="2"
-          className={`${(this.state.selectedTab === 2) ? 'well selected' : 'well absolute'}`}
-          display={this.state.selectedTab === 2}
-        >
-          <Text fontSize={20}>
-            This is a matrix3D animation done using <Code>2()</Code> animation property.
-          </Text>
-        </SectionContent>
-        <SectionContent
-          data-key="3"
-          className={`${(this.state.selectedTab === 3) ? 'well selected' : 'well absolute'}`}
-          display={this.state.selectedTab === 3}
-        >
-          <Text fontSize={20}>
-            This is a matrix3D animation done using <Code>3()</Code> animation property.
-          </Text>
-        </SectionContent>
-        <SectionContent
-          data-key="4"
-          className={`${(this.state.selectedTab === 4) ? 'well selected' : 'well absolute'}`}
-          display={this.state.selectedTab === 4}
-        >
-          <Text fontSize={20}>
-            This is a matrix3D animation done using <Code>4()</Code> animation property.
-          </Text>
-        </SectionContent>
+        {this.renderTabContent(1, 'I am LeBron James from the LA Lakers.')}
+        {this.renderTabContent(2, 'I am Kobe Bryant from the LA Lakers.')}
+        {this.renderTabContent(3, 'I am Michael Jordan from the Chicago Bulls.')}
+        {this.renderTabContent(4, 'I am Magic Johnson from the LA Lakers.')}
       </ContentWell>
     </Section>
   );

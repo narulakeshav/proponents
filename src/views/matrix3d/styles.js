@@ -1,8 +1,6 @@
 /**
- * @name: Global
- * @desc: Sets global styling for atomic elements and page
- * elements like h1, h2, h3, h4, h5, p, span, image, section,
- * page, and also includes css grid (check GridSection).
+ * @name: styles.js
+ * @desc: styles the matrix3d example on the page
  *
  * @flow
  * External Dependencies
@@ -18,6 +16,7 @@ import Button from '../../components/button';
 
 /**
  * TabGroup
+ * @type div
  */
 export const TabGroup = styled.div`
   margin: 2rem 0 1.5rem;
@@ -25,6 +24,8 @@ export const TabGroup = styled.div`
 
 /**
  * TabSelector
+ * Sets styles to the tab items
+ * @type Button
  */
 export const TabSelector = styled(Button)`
   border-radius: 0;
@@ -46,6 +47,7 @@ export const TabSelector = styled(Button)`
 
 /**
  * ContentWell
+ * defines styles for content
  */
 export const ContentWell = styled.div`
   background: ${COLORS.white};
@@ -56,6 +58,10 @@ export const ContentWell = styled.div`
   transition: 1.5s all ease-in;
 `;
 
+/**
+ * SectionContent
+ * @type Section
+ */
 export const SectionContent = styled(Section)`
   padding: 1rem;
   transition: 0.25s all ease-in;

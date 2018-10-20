@@ -23,10 +23,10 @@ export const Navbar = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  height: 65px;
+  height: 75px;
   background: ${COLORS.white};
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  padding: 1rem 5%;
+  padding: 1rem 2rem;
 `;
 
 /**
@@ -36,7 +36,7 @@ export const Navbar = styled.nav`
  */
 export const NavbarBrand = styled.div`
   display: inline-block;
-  margin-right: 1.5rem;
+  margin-right: 8.5rem;
 `;
 
 /**
@@ -45,7 +45,7 @@ export const NavbarBrand = styled.div`
  * @type h4
  */
 export const Wordmark = styled.h4`
-  font: 700 22px 'Carter One';
+  font: 700 24px 'Carter One';
   color: ${COLORS.dark};
   transition: 0.25s all ease-in;
 
@@ -93,12 +93,12 @@ export const NavbarStart = styled.div`
  * @type Link
  */
 export const NavbarItem = styled(Link)`
-  font: 400 ${FONT.size} ${FONT.family};
-  color: ${COLORS.base};
+  font: 500 ${FONT.size - 4}px ${FONT.family};
+  color: ${COLORS.light};
   padding: 0 1rem;
   transition: 0.15s all ease-in;
 
   &:hover {
-    color: ${SCHEME.secondary};
+    color: ${SCHEME.dark};
   }
 `;

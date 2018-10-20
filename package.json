@@ -16,6 +16,7 @@
     "babel-plugin-styled-components": "^1.8.0",
     "eslint-plugin-flowtype": "^2.50.3",
     "flow-bin": "^0.83.0",
+    "prism-react-renderer": "^0.1.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",

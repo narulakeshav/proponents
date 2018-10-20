@@ -19,6 +19,7 @@ import { GridSection } from '../../helpers/global';
  */
 export const CardsContainer = styled(GridSection)`
   grid-auto-row: 1fr;
+  margin-bottom: -100px;
 `;
 
 /**
@@ -34,20 +35,47 @@ export const ComponentCard = styled.div`
     : COLORS.white
   };
 
-  box-shadow: ${(props) => (props.bgGray)
-    ? 'none'
-    : `0 1px 3px ${SCHEME.shadow}`
-  };
-
-  border-radius: 12px;
+  box-shadow: 0 5px 15px -2px rgba(0,0,0,0.075);
+  border-radius: 6px;
   padding: 2rem;
   text-align: center;
   transition: 0.1s all ease-in;
 
   &:hover {
-    transform: scale(1.08);
-    p {
-      color: ${SCHEME.primary};
-    }
+    transform: scale(0.985);
   }
+
+  &:focus,
+  &:active {
+    transform: scale(0.95);
+  }
+`;
+
+export const AuthorList = styled.div`
+  position: relative;
+  top: -1rem;
+  text-align: center;
+`;
+
+export const AuthorPhoto = styled.img`
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px ${COLORS.white};
+  object-fit: cover;
+  margin-left: -6px;
+`;
+
+export const DifficultyMeter = styled.div`
+  display: inline-flex;
+  margin: 2rem 0.5rem 0.75rem;
+`;
+
+export const Difficulty = styled.div`
+  flex: 1;
+  width: 12px;
+  height: 12px;
+  margin: 0 3px;
+  border-radius: 10px;
+  background: ${SCHEME.primaryLight};
 `;

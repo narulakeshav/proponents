@@ -13,6 +13,7 @@ import * as React from 'react';
  */
 import Button from '../../components/button';
 import Input from '../../components/input';
+import CodeSwitcher from '../../components/code-switcher';
 
 // Get global styles
 import { Page, Section, H4 } from '../../helpers/global';
@@ -25,6 +26,28 @@ type State = {
   bordered: boolean,
   errorMessage: string,
 };
+
+const jsCode = `// Import Input
+import { Input } from 'proponents';
+
+// Required Props
+inputRef: Function
+inputValue: string
+placeholder: string
+inputChange: Function
+
+// Optional Props
+width?: number
+label?: string
+margin?: string
+inline?: boolean
+hasIcon?: boolean
+iconName?: string
+hasLabel?: boolean
+hasError?: boolean
+errorMessage?: string`;
+
+const stylesCode = '// no styles needed';
 
 /**
  * InputPage Component
@@ -71,6 +94,7 @@ class InputPage extends React.Component<null, State> {
     }
   }
 
+
   // Input Ref
   input: ?HTMLInputElement;
 
@@ -78,7 +102,7 @@ class InputPage extends React.Component<null, State> {
   render(): React.Element<typeof Page> {
     return (
       <Page bgGray>
-        <Section padding="8rem 20%">
+        <Section padding="8rem 20% 2rem">
           <H4 textLighter logoFont>Input Proponent</H4>
           <Input
             width={400}
@@ -105,6 +129,12 @@ class InputPage extends React.Component<null, State> {
           >
             Submit Form
           </Button>
+        </Section>
+        <Section padding="0 20%">
+          <CodeSwitcher
+            js={jsCode}
+            styles={stylesCode}
+          />
         </Section>
       </Page>
     );

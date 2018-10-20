@@ -12,11 +12,11 @@
  */
 // Scheme
 export const SCHEME = {
-  primary: '#FF1E80',
-  primaryLight: '#FFF1F7',
-  secondary: '#00B3FF',
+  primary: '#00B3FF',
+  primaryLight: '#B3E8FF',
+  secondary: '#FF1E80',
   gray: '#F7F8F9',
-  dark: '#1E2434',
+  dark: '#062849',
   shadow: '#EBECF2',
 };
 

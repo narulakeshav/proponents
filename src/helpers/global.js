@@ -711,7 +711,7 @@ export const Text = styled.p`
       : 'left'
   };
   margin: ${(props) => (props.marginCenter) ? '0 auto' : '0'};
-  margin-top: ${(props) => (props.marginTop) ? '8px' : '0'};
+  margin-top: ${(props) => (props.marginTop) ? `${props.marginTop}px` : '0'};
   margin-bottom: ${(props) => (props.marginBottom) ? '8px' : '0'};
 
   strong {

@@ -1,6 +1,6 @@
 {
   "name": "proponents",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Beautifully designed components",
   "main": "index.js",
   "repository": "https://github.com/narulakeshav/proponents.git",
@@ -9,9 +9,12 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js --mode development --color",
     "build": "webpack --mode production",
-    "flow": "flow"
+    "flow": "flow",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublish": "npm run transpile"
   },
   "dependencies": {
+    "@babel/cli": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "babel-plugin-styled-components": "^1.8.0",
     "eslint-plugin-flowtype": "^2.50.3",

@@ -9,13 +9,14 @@
 
 // Colors
 export const COLORS = {
-  gray: '#F7F8F9',
+  gray: '#F4F4F6',
   lighter: '#BFC2CC',
   light: '#878C9C',
   base: '#606374',
   dark: '#373F52',
-  darker: '#262D38',
+  darkest: '#262D38',
   white: '#FFFFFF',
+  // Actions
   success: '#2ECC71',
   error: '#FF3769',
   warning: '#FFB300',
@@ -25,11 +26,12 @@ export const COLORS = {
 // Font
 export const FONT = {
   family: `${[
+    'SF Pro Text',
     'sans-serif',
     '-apple-system',
     'BlinkMacSystemFont',
     'Helventica Neue',
-    'Roboto'
+    'Roboto',
   ].join(',')}`,
-  size: 18
+  size: 16
 };

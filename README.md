@@ -1,6 +1,13 @@
 # Proponents
 Proponents is a library with a collection of beautifully designed, user-experience centric components, built with `ReactJS` and `styled-components`.
 
+## Customize
+Proponents is designed to be customized and flexible so you can start using the components without having to constantly update their styles to fit yours.
+
+With Proponents, you can define custom configuration. Using the `setConfig()` function (which takes an  Object), you can define your color scheme, and how some styling decisions.
+
+Based on that, proponents dynamically serves components with those styles applied.
+
 ## Installing
 ```sh
 # Install package
@@ -25,4 +32,27 @@ const App = () => (
 
 // Export App
 export default App;
+```
+
+```js
+// setConfig
+export const setConfig = (Object): void => {
+
+};
+
+// App
+import { setConfig } from 'proponents';
+
+const config = {
+  scheme: {
+    primary: '#29ADBA',
+    secondary: '#249A88',
+  },
+  styles: {
+    btnRounded: false,
+    fontSize: 16,
+  }
+};
+
+setConfig(config);\
 ```

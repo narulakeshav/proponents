@@ -1,25 +1,28 @@
 # Proponents
 Proponents is a library with a collection of beautifully designed, user-experience centric components, built with `ReactJS` and `styled-components`.
 
-![Screenshot](https://i.imgur.com/vubpWzE.png)
-
 ## Installing
 ```sh
-  git clone https://github.com/narulakeshav/proponents.git
-  cd proponents
-
-  # install dependencies
-  yarn
-
-  # run dev server
-  yarn dev
+# Install package
+yarn add proponents
 ```
 
-## Proponents List
-* **`Input`**: An input element designed with preciseness and contains error handling styles.
-* **`Matrix3D`**: A tab switcher with animations when you switch content. *Inspired from Stripe*.
+## Todo
+Show examples of how to use proponents.
 
-## Proponents to be added
-* Form
-* Navbar
-* Footer
+```jsx
+// Import Button from 'proponents' dependency
+import { Button } from 'proponents';
+
+// Add Input.
+const App = () => (
+  <div>
+    <Button bg="#222222" color="#FFFFFF" rounded uppercase>
+      Submit Me
+    </Button>
+  </div>
+);
+
+// Export App
+export default App;
+```

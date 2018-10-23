@@ -1,6 +1,6 @@
 {
   "name": "proponents",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Beautifully designed components",
   "main": "dist/index.js",
   "repository": "https://github.com/narulakeshav/proponents.git",

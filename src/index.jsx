@@ -1,25 +1,12 @@
 /**
  * @flow
- * External Dependencies
- */
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-/**
  * Internal Dependencies
  */
-import App from './App';
+import Button from './components/button';
 
-/**
- * Mount to DOM
- */
-ReactDOM.render(
-  <App />,
-  // $FlowFixMe
-  document.querySelector('#app')
-);
+// eslint-disable-next-line
+import './reset.css.js';
 
-// $FlowFixMe
-if (module.hot) {
-  module.hot.accept();
-}
+export {
+  Button
+};

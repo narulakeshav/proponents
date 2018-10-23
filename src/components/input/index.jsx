@@ -17,7 +17,7 @@ import {
   IconEl,
   LabelEl
 } from './styles';
-import { Text } from '../../helpers/global';
+import { P } from '../text/styles';
 
 /**
  * Local Variables
@@ -50,9 +50,9 @@ const Label = (props: Object): React.Element<typeof LabelEl> => (
  * Render Error Message if there's an error
  * @param {Props} props
  */
-const ErrorMessage = (props: Object): React.Element<typeof Text> | string => (
+const ErrorMessage = (props: Object): React.Element<typeof P> | string => (
   (props.hasError)
-    ? <Text fontSize={16} textError>{props.errorMessage}</Text>
+    ? <P fontSize={16} textError>{props.errorMessage}</P>
     : ''
 );
 

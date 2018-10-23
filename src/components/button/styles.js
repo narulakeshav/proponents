@@ -20,12 +20,19 @@ export const Button = styled.button`
   border: none;
   background: ${(props) => (props.bg) ? props.bg : COLORS.gray};
   border-radius: ${(props) => (props.rounded) ? '40px' : '4px'};
-  font-weight: ${(props) => (props.weight) ? props.weight : 500};
+  font-weight: ${(props) => (props.weight) ? props.weight : 700};
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
-  color: ${(props) => (props.color) ? COLORS[props.color] : COLORS.dark};
+  color: ${(props) => (props.color)
+    ? (props.color.includes('#'))
+      ? props.color
+      : COLORS[props.color]
+    : COLORS.dark
+  };
+
   transition: 0.25s all ease-in-out;
   cursor: pointer;
   line-height: 0;
+  letter-spacing: 0.5px;
 
   font-size: ${(props) => (props.fontSize)
     ? `${props.fontSize}px`
@@ -78,8 +85,13 @@ export const Button = styled.button`
       ? '50px'
       : (props.noPadding)
         ? 'auto'
-        : '45px'
+        : '38px'
   };
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0;
+  }
 
   &:hover {
     opacity: 0.9;

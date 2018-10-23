@@ -7,7 +7,7 @@ injectGlobal`
     box-sizing: inherit;
     -webkit-font-smoothing: antialiased;
     font-weight: inherit;
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Text' !important;
     margin: 0;
     outline: 0;
     padding: 0;

@@ -6,32 +6,27 @@
  *
  * @flow
  */
+import RULES from './config.json';
 
-// Colors
-export const COLORS = {
-  gray: '#F4F4F6',
-  lighter: '#BFC2CC',
-  light: '#878C9C',
-  base: '#606374',
-  dark: '#373F52',
-  darkest: '#262D38',
-  white: '#FFFFFF',
-  // Actions
-  success: '#2ECC71',
-  error: '#FF3769',
-  warning: '#FFB300',
-  info: '#00B0FF',
-};
-
-// Font
-export const FONT = {
-  family: `${[
-    'SF Pro Text',
-    'sans-serif',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    'Helventica Neue',
-    'Roboto',
-  ].join(',')}`,
-  size: 16
-};
+// /**
+//  * Update Rules
+//  */
+// export const updateRules = (rulesObj: Object) => {
+//   console.log('New Rules:', rulesObj);
+//   // eslint-disable-next-line
+//   if (rulesObj.hasOwnProperty('scheme')) {
+//     Object.keys(rulesObj.scheme).map((key) => {
+//       RULES.scheme[key] = rulesObj.scheme[key];
+//       const serializedJSON = JSON.stringify(RULES, null, 2);
+//       fs.writeFile(`${__dirname}/config.json`, serializedJSON);
+//       return true;
+//     });
+//   } else if (rulesObj.hasOwnProperty('styles')) { // eslint-disable-line
+//     Object.keys(rulesObj.styles).map((key) => {
+//       RULES.styles[key] = rulesObj.styles[key];
+//       const serializedJSON = JSON.stringify(RULES, null, 2);
+//       fs.writeFile(`${__dirname}/config.json`, serializedJSON);
+//       return true;
+//     });
+//   }
+// };

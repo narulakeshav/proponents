@@ -11,12 +11,14 @@ import * as React from 'react';
  * Internal Dependencies
  */
 import { Button } from './styles';
+import RULES from '../../helpers/config.json';
 
 /**
  * Local Variables
  */
 type Props = {
   children?: any,
+  display?: string,
   bgTransparent?: boolean,
   bgPrimary?: boolean,
   bgPrimaryLight?: boolean,
@@ -53,13 +55,14 @@ const ButtonComponent = (props: Props) => (
 // Default Props
 ButtonComponent.defaultProps = {
   children: '',
+  display: 'inline-block',
   bgTransparent: true,
   bgPrimary: false,
   bgPrimaryLight: false,
   bgSecondary: false,
   bgGray: false,
   bgDark: false,
-  rounded: false,
+  rounded: RULES.styles.btnRounded,
   sizeLarge: false,
   sizeSmall: false,
   fullWidth: false,
@@ -68,7 +71,7 @@ ButtonComponent.defaultProps = {
   iconLeft: false,
   iconRight: false,
   aspectLocked: false,
-  fontSize: 16,
+  fontSize: RULES.styles.fontSize,
   iconSize: 16,
   marginTop: false,
   marginBottom: false,

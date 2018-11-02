@@ -56,3 +56,18 @@ const config = {
 
 setConfig(config);\
 ```
+
+## Contributing
+**`proponents`** is an open sourced library. If you'd like to contribution, feel free to submit a pull request.
+
+```sh
+# clone
+git clone https://github.com/narulakeshav/proponents.git
+cd proponents
+
+# Install dependencies
+yarn
+
+# run storybook
+yarn storybook # yarn dev works as well
+```

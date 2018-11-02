@@ -8,11 +8,40 @@ import { action } from '@storybook/addon-actions';
 /**
  * Internal Dependencies
  */
-import Button from '../src/components/button';
 import Row from '../src/components/row';
 import Card from '../src/components/card';
 import { Heading, Text } from '../src/components/text';
 import Image from '../src/components/image';
+
+import Button from '../src/components/button';
+
+/**
+ * Updating Rules
+ */
+storiesOf('Rules', module)
+  .add('Btn Rounded', () => (
+    <div>
+      <Button
+        bg="#278BF5"
+        color="#FFF"
+        onClick={() => console.log('Hi')}
+        boxShadow
+        display="block"
+        marginBottom
+      >
+        Change font_size to 25px
+      </Button>
+      <Button
+        bg="#FF771C"
+        color="#FFF"
+        onClick={() => console.log('HIIIXX')}
+        boxShadow
+        display="block"
+      >
+        Change font_size to 16px
+      </Button>
+    </div>
+  ));
 
 /**
  * Buttons

@@ -9,7 +9,7 @@ import styled from 'styled-components';
 /**
  * Internal Dependencies
  */
-import { COLORS, FONT } from '../../helpers/variables';
+import RULES from '../../helpers/config.json';
 
 /**
  * InputContainer
@@ -32,7 +32,7 @@ export const InputComponent = styled.div`
   grid-template-columns: ${(props) => (props.split)};
   width: 100%;
   grid-gap: 1rem;
-  background: ${COLORS.white};
+  background: ${RULES.scheme.white};
   height: 45px;
   border-radius: 6px;
   box-shadow: 0 1px 3px #E6EBF1;
@@ -42,7 +42,7 @@ export const InputComponent = styled.div`
   align-items: center;
 
   border: 1px solid ${(props) => (props.bordered)
-    ? COLORS.error
+    ? RULES.scheme.error
     : 'transparent'
   };
 
@@ -55,7 +55,7 @@ export const InputComponent = styled.div`
  * IconEl
  */
 export const IconEl = styled.i`
-  color: ${(props) => (props.error) ? COLORS.error : COLORS.lighter};
+  color: ${(props) => (props.error) ? RULES.scheme.error : RULES.scheme.lighter};
   font-size: 20px;
   transition: 0.25s all ease-in;
 `;
@@ -65,8 +65,8 @@ export const IconEl = styled.i`
  * Defines style props for input element
  */
 export const InputEl = styled.input`
-  font: 400 18px ${FONT.family};
-  color: ${COLORS.dark};
+  font: 400 18px ${RULES.styles.fontFamily};
+  color: ${RULES.scheme.dark};
   background: transparent;
 `;
 
@@ -77,6 +77,6 @@ export const InputEl = styled.input`
 export const LabelEl = styled.label`
   display: block;
   margin: 2.25rem auto 5px 0;
-  font: 500 14px ${FONT.family};
-  color: ${COLORS.light};
+  font: 500 14px ${RULES.styles.fontFamily};
+  color: ${RULES.scheme.light};
 `;

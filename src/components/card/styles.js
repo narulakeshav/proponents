@@ -9,7 +9,7 @@ import styled from 'styled-components';
 /**
  * Internal Dependencies
  */
-import { COLORS, FONT } from '../../helpers/variables';
+import RULES from '../../helpers/config.json';
 
 /**
  * Card Item
@@ -18,10 +18,10 @@ import { COLORS, FONT } from '../../helpers/variables';
 export const Card = styled.div`
   background: ${(props) => (props.bg.includes('#'))
     ? props.bg
-    : COLORS[props.bg]
+    : RULES.scheme[props.bg]
   };
   border: ${(props) => (props.bordered || props.hasShadow)
-    ? `1px solid ${COLORS.gray}`
+    ? `1px solid ${RULES.scheme.gray}`
     : 'none'
   };
 
@@ -32,13 +32,13 @@ export const Card = styled.div`
 
   border-radius: ${(props) => (props.radius)};
   padding: ${(props) => (props.padding)};
-  font-family: ${FONT.family};
+  font-family: ${RULES.styles.fontFamily};
   cursor: pointer;
   transition: 0.15s all ease-in;
 
   &:hover {
     background: ${(props) => (props.bg === '#FFFFFF' || props.bg === 'white')
-      ? COLORS.white
+      ? RULES.scheme.white
       : '#EDEDF2'
     };
 

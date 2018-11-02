@@ -9,35 +9,35 @@ import styled from 'styled-components';
 /**
  * Internal Dependencies
  */
-import { COLORS } from '../../helpers/variables';
+import RULES from '../../helpers/config.json';
 
 /**
  * Button Component
  * @type button
  */
 export const Button = styled.button`
-  display: inline-block;
+  display: ${(props) => (props.display)};
   border: none;
-  background: ${(props) => (props.bg) ? props.bg : COLORS.gray};
-  border-radius: ${(props) => (props.rounded) ? '40px' : '4px'};
+  background: ${(props) => (props.bg) ? props.bg : RULES.scheme.gray};
+  border-radius: ${(props) => (RULES.btnRounded || props.rounded)
+    ? '40px'
+    : '4px'
+  };
   font-weight: ${(props) => (props.weight) ? props.weight : 700};
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
   color: ${(props) => (props.color)
     ? (props.color.includes('#'))
       ? props.color
-      : COLORS[props.color]
-    : COLORS.dark
+      : RULES.scheme[props.color]
+    : RULES.scheme.dark
   };
 
   transition: 0.25s all ease-in-out;
   cursor: pointer;
   line-height: 0;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.95px;
 
-  font-size: ${(props) => (props.fontSize)
-    ? `${props.fontSize}px`
-    : '10px'
-  };
+  font-size: ${(props) => `${props.fontSize}px`};
 
   box-shadow: ${(props) => (props.shadow)
     ? '0 2px 4px rgba(0,0,0,0.1)'

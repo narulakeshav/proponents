@@ -9,7 +9,7 @@ import styled from 'styled-components';
 /**
  * Internal Dependencies
  */
-import { COLORS, FONT } from '../../helpers/variables';
+import RULES from '../../helpers/config.json';
 
 /** ************************************************/
 /** ***************** FONT STYLING *****************/
@@ -23,15 +23,15 @@ export const H1 = styled.h1`
   color: ${(props) => (props.color)
     ? (props.color.includes('#'))
       ? props.color
-      : COLORS[props.color]
+      : RULES.scheme[props.color]
     : props.colorRGBA
       ? props.colorRGBA
-      : COLORS.darkest
+      : RULES.scheme.darkest
   };
 
   font-weight: ${(props) => (props.weight) ? props.weight : 800};
-  font-size: ${FONT.size * 3.25}px;
-  font-family: ${FONT.family};
+  font-size: ${RULES.styles.fontSize * 3.25}px;
+  font-family: ${RULES.styles.fontFamily};
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
   margin-top: ${(props) => (props.marginTop) ? '8px' : '0'};
   margin-bottom: ${(props) => (props.marginBottom)
@@ -53,15 +53,15 @@ export const H2 = styled.h2`
   color: ${(props) => (props.color)
     ? (props.color.includes('#'))
       ? props.color
-      : COLORS[props.color]
+      : RULES.scheme[props.color]
     : props.colorRGBA
       ? props.colorRGBA
-      : COLORS.dark
+      : RULES.scheme.dark
   };
 
   font-weight: ${(props) => (props.weight) ? props.weight : 700};
-  font-size: ${FONT.size * 2.75}px;
-  font-family: ${FONT.family};
+  font-size: ${RULES.styles.fontSize * 2.75}px;
+  font-family: ${RULES.styles.fontFamily};
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
   margin-top: ${(props) => (props.marginTop) ? '8px' : '0'};
   margin-bottom: ${(props) => (props.marginBottom)
@@ -83,15 +83,15 @@ export const H3 = styled.h3`
   color: ${(props) => (props.color)
     ? (props.color.includes('#'))
       ? props.color
-      : COLORS[props.color]
+      : RULES.scheme[props.color]
     : props.colorRGBA
       ? props.colorRGBA
-      : COLORS.dark
+      : RULES.scheme.dark
   };
 
   font-weight: ${(props) => (props.weight) ? props.weight : 700};
-  font-size: ${FONT.size * 2}px;
-  font-family: ${FONT.family};
+  font-size: ${RULES.styles.fontSize * 2}px;
+  font-family: ${RULES.styles.fontFamily};
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
   margin-top: ${(props) => (props.marginTop) ? '8px' : '0'};
   margin-bottom: ${(props) => (props.marginBottom)
@@ -113,15 +113,15 @@ export const H4 = styled.h4`
   color: ${(props) => (props.color)
     ? (props.color.includes('#'))
       ? props.color
-      : COLORS[props.color]
+      : RULES.scheme[props.color]
     : props.colorRGBA
       ? props.colorRGBA
-      : COLORS.dark
+      : RULES.scheme.dark
   };
 
   font-weight: ${(props) => (props.weight) ? props.weight : 600};
-  font-size: ${FONT.size * 1.5}px;
-  font-family: ${FONT.family};
+  font-size: ${RULES.styles.fontSize * 1.5}px;
+  font-family: ${RULES.styles.fontFamily};
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
   margin-top: ${(props) => (props.marginTop) ? '8px' : '0'};
   margin-bottom: ${(props) => (props.marginBottom)
@@ -143,15 +143,15 @@ export const H5 = styled.h5`
   color: ${(props) => (props.color)
     ? (props.color.includes('#'))
       ? props.color
-      : COLORS[props.color]
+      : RULES.scheme[props.color]
     : props.colorRGBA
       ? props.colorRGBA
-      : COLORS.dark
+      : RULES.scheme.dark
   };
 
   font-weight: ${(props) => (props.weight) ? props.weight : 600};
-  font-size: ${FONT.size * 1.25}px;
-  font-family: ${FONT.family};
+  font-size: ${RULES.styles.fontSize * 1.25}px;
+  font-family: ${RULES.styles.fontFamily};
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
   margin-top: ${(props) => (props.marginTop) ? '8px' : '0'};
   margin-bottom: ${(props) => (props.marginBottom)
@@ -173,18 +173,18 @@ export const P = styled.p`
   color: ${(props) => (props.color)
     ? (props.color.includes('#'))
       ? props.color
-      : COLORS[props.color]
+      : RULES.scheme[props.color]
     : props.colorRGBA
       ? props.colorRGBA
-      : COLORS.dark
+      : RULES.scheme.dark
   };
 
   font-weight: ${(props) => (props.weight) ? props.weight : 400};
   font-size: ${(props) => (props.fontSize)
     ? `${props.fontSize}px`
-    : `${FONT.size}px`
+    : `${RULES.styles.fontSize}px`
   };
-  font-family: ${FONT.family};
+  font-family: ${RULES.styles.fontFamily};
   text-transform: ${(props) => (props.uppercase) ? 'uppercase' : 'none'};
   margin-top: ${(props) => (props.marginTop) ? '8px' : '0'};
   margin-bottom: ${(props) => (props.marginBottom)

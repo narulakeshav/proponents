@@ -18,43 +18,24 @@ yarn add proponents
 Show examples of how to use proponents.
 
 ```jsx
-// Import Button from 'proponents' dependency
-import { Button } from 'proponents';
+// Import proponents
+import { Row, Heading, Text, Button } from 'proponents';
 
 // Add Input.
 const App = () => (
-  <div>
+  <Row padding="4rem 20%">
+    <Heading h3 weightHeavy marginBottom>Hi User</Heading>
+    <Text lineHeight={140} marginBottom>
+      You haven't submitted your assignment yet. Please do now!
+    </Text>
     <Button bg="#222222" color="#FFFFFF" rounded uppercase>
       Submit Me
     </Button>
-  </div>
+  </Row>
 );
 
 // Export App
 export default App;
-```
-
-```js
-// setConfig
-export const setConfig = (Object): void => {
-
-};
-
-// App
-import { setConfig } from 'proponents';
-
-const config = {
-  scheme: {
-    primary: '#29ADBA',
-    secondary: '#249A88',
-  },
-  styles: {
-    btnRounded: false,
-    fontSize: 16,
-  }
-};
-
-setConfig(config);\
 ```
 
 ## Contributing

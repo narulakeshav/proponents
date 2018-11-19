@@ -1,8 +1,11 @@
+/**
+ * External Dependencies
+ */
 import { configure } from '@storybook/react';
 
+// You can require as many stories as you need.
 function loadStories() {
-  require('../stories/index.jsx');
-  // You can require as many stories as you need.
+  require('../stories/index.stories.jsx');
 }
 
 configure(loadStories, module);

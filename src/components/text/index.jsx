@@ -16,7 +16,11 @@ import { H1, H2, H3, H4, H5, P } from './styles';
  * Local Variables
  */
 type Props = {
-  h?: string | null,
+  h1?: boolean,
+  h2?: boolean,
+  h3?: boolean,
+  h4?: boolean,
+  h5?: boolean,
   children: any,
 };
 
@@ -24,20 +28,17 @@ type Props = {
  * Creates Dynamic Heading
  * @param {Props} props
  */
-export const Heading = (props: Props) => {
-  switch (props.h) {
-    case 2:
-      return <H2 {...props}>{props.children}</H2>;
-    case 3:
-      return <H3 {...props}>{props.children}</H3>;
-    case 4:
-      return <H4 {...props}>{props.children}</H4>;
-    case 5:
-      return <H5 {...props}>{props.children}</H5>;
-    default:
-      return <H1 {...props}>{props.children}</H1>;
-  }
-};
+export const Heading = (props: Props) => (
+  (props.h1)
+    ? <H1 {...props}>{props.children}</H1>
+    : (props.h2)
+      ? <H2 {...props}>{props.children}</H2>
+      : (props.h3)
+        ? <H3 {...props}>{props.children}</H3>
+        : (props.h4)
+          ? <H4 {...props}>{props.children}</H4>
+          : <H5 {...props}>{props.children}</H5>
+);
 
 /**
  * Creates Paragraph Text
@@ -49,9 +50,17 @@ export const Text = (props: Props) => (
 
 // Default Props
 Heading.defaultProps = {
-  h: 1
+  h1: false,
+  h2: false,
+  h3: false,
+  h4: false,
+  h5: false,
 };
 
 Text.defaultProps = {
-  h: null
+  h1: false,
+  h2: false,
+  h3: false,
+  h4: false,
+  h5: false,
 };

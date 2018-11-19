@@ -20,12 +20,12 @@ export const Card = styled.div`
     ? props.bg
     : RULES.scheme[props.bg]
   };
-  border: ${(props) => (props.bordered || props.hasShadow)
+  border: ${(props) => (props.bordered || ((props.bg === '#FFFFFF' || props.bg === 'white')))
     ? `1px solid ${RULES.scheme.gray}`
     : 'none'
   };
 
-  box-shadow: ${(props) => (props.hasShadow)
+  box-shadow: ${(props) => (props.bg === '#FFFFFF' || props.bg === 'white')
     ? '0 1px 3px #EDEDF2'
     : 'none'
   };
@@ -46,6 +46,6 @@ export const Card = styled.div`
       ? '0 2px 6px #EDEDF2'
       : 'none'
     };
-    transform: scale(1.05);
+    transform: translate3D(0,-3px,0) scale(1.02);
   }
 `;

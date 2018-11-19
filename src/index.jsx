@@ -11,13 +11,6 @@ import { Heading, Text } from './components/text';
 // eslint-disable-next-line
 import './reset.css.js';
 
-import { updateRules } from './helpers/variables';
-
-const setConfig = (configObj: Object): void => {
-  // somehow affect the settings in variables?
-  updateRules(configObj);
-};
-
 // Export
 export {
   Button,
@@ -26,5 +19,4 @@ export {
   Image,
   Card,
   Row,
-  setConfig
 };

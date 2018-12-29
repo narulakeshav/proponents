@@ -4,4 +4,5 @@
 # Internal
 .vscode/
 /dist/
+# /src/components/**/index.test.jsx
 .npmignore

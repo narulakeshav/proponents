@@ -1,5 +1,9 @@
+![Proponents](https://i.imgur.com/czeDE8g.png)
+
 # Proponents
-Proponents is a library with a collection of beautifully designed, user-experience centric components, built with `ReactJS` and `styled-components`.
+Proponents is an open-sourced React UI Framework (an extensible
+design system) designed to **reduce** *development time* and
+**speed up** *product iterations*.
 
 ## Customize
 Proponents is designed to be customized and flexible so you can start using the components without having to constantly update their styles to fit yours.
